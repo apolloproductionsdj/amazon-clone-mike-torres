@@ -1,24 +1,5 @@
 export const initialState = {
-  basket: [
-  {
-    id: "3254354345",
-    title: 
-      "New Apple iPad Pro (12.9-inch, Wi-fi, 128GB) - Space Gray (4th Generation)",
-    price: 598.99,
-    rating: 4,
-    image: 
-      "https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SX679_.jpg"
-  },
-  {
-    id: "3254354345",
-    title: 
-      "New Apple iPad Pro (12.9-inch, Wi-fi, 128GB) - Space Gray (4th Generation)",
-    price: 598.99,
-    rating: 4,
-    image: 
-      "https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SX679_.jpg"
-  }
-  ],
+  basket: [],
   user: null,
 };
 
@@ -28,6 +9,11 @@ basket?.reduce((amount, item) => item.price + amount, 0);
 const reducer = (state, action) =>{
   console.log(action);
   switch(action.type) {
+    case "SET_USER":
+      return {
+        ...state, 
+        user: action.user,
+      }
     case 'ADD_TO_BASKET': 
       return { 
         ...state,
